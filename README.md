@@ -25,8 +25,8 @@ The first screen the user will see in the alpha release is the deck builder, whe
 When it is a player's turn, they may click on any of their cards and then click on an empty board space to play that card. Color outlines help denote which player's turn it is, as well as which cards on the board they currently control. Score is kept on both sides of the board and a victor is declared once all 9 board squares are filled in. In the event of a tie, the players may reset the board to try again.
 
 ## Credits
-HTML, CSS, and Javascript code  © Drew Goodman 2019, all rights reserved
-Game design, card graphics, and music are all owned by Square Enix Holdings Co., Ltd.
+ - HTML, CSS, and Javascript code  © Drew Goodman 2019, all rights reserved
+ - Game design, card graphics, and music are all owned by Square Enix Holdings Co., Ltd.
 
 ## Change Log
 ### [0.8.1] - 10-03-2019
