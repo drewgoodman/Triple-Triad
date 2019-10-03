@@ -29,4 +29,5 @@ When it is a player's turn, they may click on any of their cards and then click 
 
 
 ## Change Log
+0.8.1 Second Commit - fixed an audio oversight with the victory fanfare music
 0.8.0 First Commit - alpha, currently playable but lacking in some UI elements

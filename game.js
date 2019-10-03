@@ -138,6 +138,7 @@ musicFanfare.volumne  = 0.4;
 
 function stopMusic() {
     music.pause();
+    musicFanfare.pause();
 }
 
 function playMusic() {
@@ -328,6 +329,9 @@ function resetGame() {
     playerOne.score = 5;
     playerTwo.score = 5;
     turnPlayer = 0;
+    music.play();
+    musicFanfare.pause();
+    musicFanfare.currentTime = 0
     gameStart();
 }
 
@@ -380,10 +384,13 @@ function turnSequence() {
         otherPlayerObj.hand.classList.remove(otherPlayerObj.turnActiveClass)
         enableHandHoverEffect();
     } else {
-        setTimeout(function() {
-            music.pause();
-            musicFanfare.play();
-        }, 1800);
+        if(playerOne.score != playerTwo.score) {
+            setTimeout(function() {
+                music.pause();
+                musicFanfare.play();
+            }, 1800);
+        }
+
         setTimeout(function() {
             checkWinCondition();
         }, 2000);
