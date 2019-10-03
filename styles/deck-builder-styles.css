@@ -1,0 +1,130 @@
+
+/* ============================= DECK BUILDER STYLES =================================== */
+
+.deck-building-wrapper {
+    justify-content: center;
+}
+
+.player-decks {
+    display: grid;
+    grid-template-columns: 5fr 2fr 5fr;
+    width: 70vw;
+    gap: 0px 10px;
+}
+
+#deck-build-commands {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#deck-build-commands div {
+    background-color: #444444;
+    width: 90%;
+    border-radius: 10px;
+    margin: 5px;
+    text-align: center;
+    font-size: 1vw;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+    -webkit-box-shadow: 7px 9px 6px -4px rgba(0,0,0,0.72);
+    -moz-box-shadow: 7px 9px 6px -4px rgba(0,0,0,0.72);
+    box-shadow: 7px 9px 6px -4px rgba(0,0,0,0.72);
+    
+}
+
+.unavailable {
+    opacity: .3;
+}
+
+.deck-header {
+    font-size: 1.5vw;
+    font-weight: 600;
+    text-align: right;
+    margin-right: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#playerOneCount {
+    color: red;
+}
+
+#playerTwoCount {
+    color: darkblue;
+}
+
+.deck {
+    display: flex;
+    flex-direction: initial;
+    justify-content: space-around;
+    background-color: rgba(250,250,250,.2);
+    padding: 20px 10px;
+    border-radius: 10px;
+    height: 6vw;
+    -webkit-box-shadow: 7px 9px 10px 0px rgba(0,0,0,0.5);
+    -moz-box-shadow: 7px 9px 10px 0px rgba(0,0,0,0.5);
+    box-shadow: 7px 9px 10px 0px rgba(0,0,0,0.5);
+}
+
+.deck-card {
+    margin: .4vw;
+    height: 5.8vw;
+    animation: anim-add-card 0.6s ease;
+}
+
+.turn-player-deck-card {
+    transition: all .2s;
+    cursor: pointer;
+}
+
+.turn-player-deck-card:hover {
+    transform: translateY(1.1em) scale(1.2, 1.2);
+    opacity: .7;
+}
+
+.card-database-wrapper h2 {
+    margin-top: 20px;
+    margin-bottom: -20px;
+    text-align: center;
+    color: #333;
+}
+
+.builder-buttons-wrapper {
+    margin-left: 1vw;
+}
+
+.builder-buttons-wrapper h2 {
+    margin-bottom: -15px;
+}
+
+.card-display {
+    background-color: rgba(250,250,250,.2);
+    max-width: 69vw;
+    height: 38vh;
+    border-radius: 10px 0px 0px 10px;
+    border-top: 3px solid #333;
+    display: flex;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding-top: 1vw;
+    padding-left: 1vw;
+    align-content: flex-start;
+    -webkit-box-shadow: 7px 9px 10px 0px rgba(0,0,0,0.5);
+    -moz-box-shadow: 7px 9px 10px 0px rgba(0,0,0,0.5);
+    box-shadow: 7px 9px 10px 0px rgba(0,0,0,0.5);
+}
+
+.card-display img {
+    margin: .4vw .4vw;
+    height: 6vw;
+    transition: all .2s;
+    cursor: pointer;
+}
+
+.card-display img:hover {
+    transform: translateY(-.6em) scale(1.2, 1.2);
+}

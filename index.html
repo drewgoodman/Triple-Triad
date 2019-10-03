@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Shuffle or Boogie</title>
+    <link rel="stylesheet" href="styles/game-board-styles.css">
+    <link rel="stylesheet" href="styles/deck-builder-styles.css">
+    <link rel="stylesheet" href="styles/animations.css">
+    <link href="https://fonts.googleapis.com/css?family=Rajdhani&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cinzel+Decorative&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <audio id="musicPlayer">
+        <source src="audio/tt_original.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <audio id="musicVictory">
+        <source src="audio/tt_victory.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <input type="button" onclick="playMusic()" value="Play Music">
+    <input type="button" onclick="stopMusic()" value="Stop Music">
+    <input type="button" onclick="debugGame()" value="TEST: Start Debug Game">
+    <input type="button" onclick="resetGame()" value="TEST: Reset Game">
+    <input type="button" onclick="toggleAvatar()" value="TEST: Toggle Avatars">
+    
+    © Drew Goodman 2019
+
+    <div class="bg-image"></div>
+    <div id="playerOne-avatar" class="avatar menu-disabled"><img src="players/avatar-ultimecia.png"></div>
+    <div id="playerTwo-avatar"  class="avatar menu-disabled"><img src="players/avatar-squall.png"></div>
+    <div class="game-container">
+        <h1>
+            TRIPLE TRIAD
+        </h1>
+        <div id="player-turn-display" class="bar-display menu-disabled"></div>
+
+        <div class="game-wrapper menu-disabled">
+            <div class="playerOne-hand hand">
+                <div id="playerOne-hand-bg" class="hand-bg"></div>
+            </div>
+            <div class="playerOne-score score">5</div>
+            <div class="game-board">
+                <div id="1x1" class="board-square"></div>
+                <div id="2x1" class="board-square"></div>
+                <div id="3x1" class="board-square"></div>
+                <div id="1x2" class="board-square"></div>
+                <div id="2x2" class="board-square"></div>
+                <div id="3x2" class="board-square"></div>
+                <div id="1x3" class="board-square"></div>
+                <div id="2x3" class="board-square"></div>
+                <div id="3x3" class="board-square"></div>
+            </div>
+            <div class="playerTwo-score score">5</div>
+            <div class="playerTwo-hand hand">
+                    <div id="playerTwo-hand-bg" class="hand-bg"></div>
+            </div>
+        </div>
+        <div id="rules-display" class="bar-display">[Rules] - OPEN</div>        
+
+        <div class="deck-building-wrapper">
+            <div class="player-decks">
+                <div class="deck-column">
+                    <div class="deck-header">
+                        <div class="directions" id="playerOneDirections">Player ONE: Choose your cards</div>
+                        <div class="count" id="playerOneCount">0/5</div>
+                    </div>
+                    <div class="playerOne-deck deck">
+                    </div>
+                </div>
+
+                <div id="deck-build-commands">
+                    <div id="next-player" onclick="nextDeckClick()">Player Two --></div>
+                    <div id="previous-player" class="unavailable" onclick="previousDeckClick()">
+                        <- Player One</div> <div id="rule-options" class="unavailable">Rule Options
+                    </div>
+                    <div id="start-game" class="unavailable" onclick="startGameClick()">Start Game</div>
+                </div>
+
+                <div class="deck-column">
+                    <div class="deck-header">
+                        <div class="directions" id="playerTwoDirections"></div>
+                        <div class="count" id="playerTwoCount">0/5</div>
+                    </div>
+                    <div class="playerTwo-deck deck">
+                    </div>
+                </div>
+            </div>
+            <div class="card-database-wrapper">
+                <div class="builder-buttons-wrapper">
+                    <h2>Available Cards</h2>
+                    <input type="button" value="(+) Random" onclick="randomCardAdd()">
+                    <input type="button" value="Clear All" onclick="clearDeckClick()">
+                </div>
+                <div class="card-display">
+                </div>
+            </div>
+        </div> 
+    </div>
+</body>
+<script type="text/javascript" src="game.js"></script>
+<script>
+
+function toggleAvatar() {
+    const avatars = document.querySelectorAll('.avatar');
+    avatars.forEach(avatar => {avatar.classList.toggle('menu-disabled');});
+}
+
+
+</script>
+
+
+</html>

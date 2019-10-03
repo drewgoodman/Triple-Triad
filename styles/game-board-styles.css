@@ -1,0 +1,228 @@
+body {
+    background-color: #333;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    margin: 0;
+}
+
+input {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 600;
+    background-color: #333;
+    color: white;
+}
+
+h1 {
+    margin-top: 0px;
+    margin-bottom: -10px;
+    font-family: 'Cinzel Decorative', cursive;
+    color: black;
+    font-size: 5vw;
+    text-shadow: .3vw .2vw rgba(39, 33, 33,.5);
+}
+
+.bg-image {
+    background: url("../images/background.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    filter: blur(5px);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -2;
+}
+
+.avatar img {
+    position: fixed;
+    z-index: -1;
+    width: 40vw;
+    margin-top: 2.5vw;
+
+	filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12,Color='#444')";
+	filter: url(#drop-shadow);
+	-webkit-filter: drop-shadow(12px 12px 7px rgba(0,0,0,0.5));
+	filter: drop-shadow(12px 12px 7px rgba(0,0,0,0.5));    
+    /* animation: anim-active-avatar .5s ease; */
+}
+
+#playerTwo-avatar img {
+    right: -9vw;
+    top: 4vw;
+}
+
+.game-container {   
+    height: 70vh;
+    padding: 10px;
+    color: rgb(71, 61, 61);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Rajdhani', sans-serif;
+}
+
+
+.game-wrapper {
+    display: grid;
+    grid-template-columns: 4fr 1fr 3fr 1fr 4fr;
+    align-content: center;
+    align-items: center;
+}
+
+.bar-display {
+    background-color: #444444;
+    width: 30%;
+    border-radius: 10px;
+    margin: 10px 0px;
+    padding: 5px;
+    text-align: center;
+    font-size: 1vw;
+    font-weight: 600;
+    color: white;
+    -webkit-box-shadow: 7px 9px 6px -4px rgba(0,0,0,0.72);
+    -moz-box-shadow: 7px 9px 6px -4px rgba(0,0,0,0.72);
+    box-shadow: 7px 9px 6px -4px rgba(0,0,0,0.72);  
+    /* transition: all 3s; */
+}
+
+.menu-disabled {
+    display: none;
+}
+
+.hand:before {
+    filter: blur(20px);
+}
+
+.hand {
+    display: flex;
+    flex-direction: initial;
+    justify-content: space-around;
+    background-color: rgba(250,250,250,.2);
+    padding: 20px 10px;
+    border-radius: 10px;
+    margin-bottom: -5vw;
+    height: 6vw;
+}
+
+
+
+.active-hand {
+    background-color: rgba(255,255,255,.5);
+}
+
+.hand-card img{
+    z-index: 2;
+    max-width: 4.6vw;
+}
+
+.score {
+    text-align: center;
+    font-size: 6vw;
+    color: white;
+    background-color: #222222;
+    border-radius: 10px;
+    /* align-self: flex-end; */
+
+    margin-right: 15px;
+    margin-left: 15px;
+    margin-bottom: 0;
+    
+    -webkit-box-shadow: 7px 9px 6px -4px rgba(0,0,0,0.72);
+    -moz-box-shadow: 7px 9px 6px -4px rgba(0,0,0,0.72);
+    box-shadow: 7px 9px 6px -4px rgba(0,0,0,0.72);  
+}
+
+.game-board {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+}
+
+.board-square {
+    border: 1px dotted gray;
+    box-shadow: 7px 5px 6px -4px rgba(0,0,0,0.72);  
+    height: 8vw;
+    width: 6.2vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+}
+
+
+.board-square img {
+    max-width: 6.5vw;
+}
+
+.p1-square {
+    /* box-shadow: 0px 0px 10px 2px rgba(242,0,0,1); */
+    background-color: rgba(242,0,0,.2);
+    animation: square-change-anim .5s ease;
+}
+
+.p2-square {
+    /* box-shadow: 0px 0px 10px 2px rgba(3,0,209,1); */
+    background-color: rgba(3,0,209,.2);
+    animation: square-change-anim .5s ease;
+}
+
+@keyframes square-change-anim {
+    0% {
+        background-color: (3,0,209,0);
+    }
+    100% {
+        background-color: (3,0,209,.2);
+    }
+}
+
+.p1-turn-active {
+    box-shadow: 0px -18px 37px 5px rgba(242,0,0,0.75);
+}
+
+.p2-turn-active {
+    box-shadow: 0px -18px 37px 5px rgba(3,0,209,.75);
+}
+
+.card-hover-select img {
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+.card-hover-select img:hover {
+    transform: rotateZ(-1deg) translateY(-1.2em) scale(1.2, 1.2);
+}
+
+.used-card {
+    animation: anim-play-card-from-hand .3s ease;
+    opacity: 0;
+}
+
+.hide-used-card {
+    display: none;
+}
+
+.selected img {
+    transform: translateY(-3em) rotateZ(-1deg) scale(1.2, 1.2);
+    animation: selected-card .4s ease;
+    cursor: pointer;
+}
+
+.square-mouseover {
+    background-color: rgba(155,155,155,.3);
+    cursor: crosshair;
+}
+
+.card-placed {
+    animation: anim-placed-board-card 0.4s ease;
+}
+
+.flipped-card {
+    animation: anim-flip .6s ease;
+}
+
