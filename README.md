@@ -29,9 +29,9 @@ When it is a player's turn, they may click on any of their cards and then click 
  - Game design, card graphics, and music are all owned by Square Enix Holdings Co., Ltd.
 
 ## Change Log
-### [0.8.1] - 10-03-2019
+### [0.1.1] - 10-03-2019
 #### Added
  - Corrected an oversight with the victory fanfare music
-### [0.8.0] - 10-02-2019
+### [0.1.0] - 10-02-2019
 #### Added
  - Alpha release, currently playable but lacking in some UI elements
