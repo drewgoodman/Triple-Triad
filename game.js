@@ -133,8 +133,8 @@ fillCardBank();
 changeTurnPlayer(1);
 
 music.loop = true;
-music.volume = 0.5;
-musicFanfare.volumne  = 0.4;
+music.volume = 0.4;
+musicFanfare.volumne  = 0.3;
 
 function stopMusic() {
     music.pause();

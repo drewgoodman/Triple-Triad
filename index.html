@@ -22,17 +22,13 @@
         <source src="audio/tt_victory.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
-    <input type="button" onclick="playMusic()" value="Play Music">
     <input type="button" onclick="stopMusic()" value="Stop Music">
-    <input type="button" onclick="debugGame()" value="TEST: Start Debug Game">
-    <input type="button" onclick="resetGame()" value="TEST: Reset Game">
-    <input type="button" onclick="toggleAvatar()" value="TEST: Toggle Avatars">
-    
-    © Drew Goodman 2019
-
+    <input type="button" onclick="window.location.href='https://github.com/drewgoodman/Triple-Triad';"
+        value="View GitHUB Repository">
+    Game design, card graphics, and music are all owned by Square Enix Holdings Co., Ltd. HTML, CSS, and Javascript code © Drew Goodman 2019, all rights reserved
     <div class="bg-image"></div>
     <div id="playerOne-avatar" class="avatar menu-disabled"><img src="players/avatar-ultimecia.png"></div>
-    <div id="playerTwo-avatar"  class="avatar menu-disabled"><img src="players/avatar-squall.png"></div>
+    <div id="playerTwo-avatar" class="avatar menu-disabled"><img src="players/avatar-squall.png"></div>
     <div class="game-container">
         <h1>
             TRIPLE TRIAD
@@ -57,10 +53,10 @@
             </div>
             <div class="playerTwo-score score">5</div>
             <div class="playerTwo-hand hand">
-                    <div id="playerTwo-hand-bg" class="hand-bg"></div>
+                <div id="playerTwo-hand-bg" class="hand-bg"></div>
             </div>
         </div>
-        <div id="rules-display" class="bar-display">[Rules] - OPEN</div>        
+        <div id="rules-display" class="bar-display">[Rules] - OPEN</div>
 
         <div class="deck-building-wrapper">
             <div class="player-decks">
@@ -99,16 +95,16 @@
                 <div class="card-display">
                 </div>
             </div>
-        </div> 
+        </div>
     </div>
 </body>
 <script type="text/javascript" src="game.js"></script>
 <script>
 
-function toggleAvatar() {
-    const avatars = document.querySelectorAll('.avatar');
-    avatars.forEach(avatar => {avatar.classList.toggle('menu-disabled');});
-}
+    function toggleAvatar() {
+        const avatars = document.querySelectorAll('.avatar');
+        avatars.forEach(avatar => { avatar.classList.toggle('menu-disabled'); });
+    }
 
 
 </script>
